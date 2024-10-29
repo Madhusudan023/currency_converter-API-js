@@ -28,6 +28,7 @@ h1{
     font-weight: 500;
     background-color: #999AC6;
     width: 100%;
+    
    
 }
 p{
@@ -50,7 +51,6 @@ p{
     background-color: #E8EBE4;
     padding: 2rem;
     min-height: 50vh;
-    min-width: 70vh;
     border-radius: 1rem;
 }
 
