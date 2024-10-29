@@ -12,7 +12,7 @@ const toCurr = document.querySelector(".to select");
 
 const ConversionMsg = document.querySelector(".Conversion-msg");
 
-const amount = document.querySelector(".amount input");
+
 
 
 for (let select of dropdown) {
@@ -63,13 +63,12 @@ const updateFlag = function(element){
 btn.addEventListener("click", async function  (evt) {
     evt.preventDefault();
 
-    
-   
+    let amount = document.querySelector(".amount input");
+
     let amountValue = amount.value;
-    if(amountValue == "" || amountValue <= 0 || amountValue == NaN)
+    if(amountValue === "" || isNaN(amountValue) || Number(amountValue) < 0  || amountValue == String)
     {
         errorMsg.innerText = `ERROR !! ${amountValue} is not valid Number`;
-        amountValue=1 ;  
         amount.value= 1; 
         
         amount.style.borderColor="#ff0000b8";
@@ -77,7 +76,7 @@ btn.addEventListener("click", async function  (evt) {
     }
     else{
         amount.style.borderColor="#798071";
-        errorMsg.innerText = "";
+        errorMsg.innerText = " ";
     }
     
     const URL = `${Base_URL}/${fromCurr.value.toLowerCase()}.json`;
